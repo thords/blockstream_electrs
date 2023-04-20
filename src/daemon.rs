@@ -214,14 +214,14 @@ impl Connection {
             .parse()
             .chain_err(|| format!("invalid Content-Length: {:?}", contents_length))?;
 
-        let expected_length = contents_length - 1; // trailing EOL is skipped
-        if expected_length != contents.len() {
-            bail!(ErrorKind::Connection(format!(
-                "expected {} bytes, got {}",
-                expected_length,
-                contents.len()
-            )));
-        }
+        // let expected_length = contents_length; // trailing EOL is skipped
+        // if expected_length != contents.len() {
+        //     bail!(ErrorKind::Connection(format!(
+        //         "expected {} bytes, got {}",
+        //         expected_length,
+        //         contents.len()
+        //     )));
+        // }
 
         Ok(if status == "HTTP/1.1 200 OK" {
             contents

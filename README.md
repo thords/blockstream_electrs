@@ -1,5 +1,10 @@
 # Esplora - Electrs backend API
 
+## build
+```shell
+cargo build -r
+cp target/x86_64-unknown-linux-musl/release/electrs release_musl 
+```
 A block chain index engine and HTTP API written in Rust based on [romanz/electrs](https://github.com/romanz/electrs).
 
 Used as the backend for the [Esplora block explorer](https://github.com/Blockstream/esplora) powering [blockstream.info](https://blockstream.info/).

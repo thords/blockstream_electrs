@@ -2,7 +2,7 @@
 
 ## build
 ```shell
-cargo build -r
+ cargo build -r --target=x86_64-unknown-linux-gnu 
 cp target/x86_64-unknown-linux-musl/release/electrs release/electrs_0.4.1_gnu
 ```
 A block chain index engine and HTTP API written in Rust based on [romanz/electrs](https://github.com/romanz/electrs).
